@@ -44,7 +44,7 @@ export class TasksResolver {
   }
 
   @Mutation(() => Boolean)
-  reTaskOrder(@Args('reOrderInput') reOrderInput: ReOrderInput) {
+  reOrderTask(@Args('reOrderInput') reOrderInput: ReOrderInput) {
     return this.tasksService.reOrderTask(reOrderInput);
   }
 }

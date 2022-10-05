@@ -31,7 +31,7 @@ type Mutation {
   createTask(createTaskInput: CreateTaskInput!): Task!
   updateTask(updateTaskInput: UpdateTaskInput!): Boolean!
   removeTask(id: Int!): Boolean!
-  reTaskOrder(reOrderInput: ReOrderInput!): Boolean!
+  reOrderTask(reOrderInput: ReOrderInput!): Boolean!
 }
 
 input CreateListInput {
