@@ -1,0 +1,60 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type List {
+  id: Int!
+  title: String!
+  tasks: [Task!]
+}
+
+type Task {
+  id: Int!
+  title: String!
+  status: String!
+  listId: Int!
+  list: List!
+  order: Int!
+}
+
+type Query {
+  lists: [List!]!
+  list(id: Int!): List!
+  tasks: [Task!]!
+  task(id: Int!): Task!
+}
+
+type Mutation {
+  createList(createListInput: CreateListInput!): List!
+  updateList(updateListInput: UpdateListInput!): Boolean!
+  removeList(id: Int!): Boolean!
+  createTask(createTaskInput: CreateTaskInput!): Task!
+  updateTask(updateTaskInput: UpdateTaskInput!): Boolean!
+  removeTask(id: Int!): Boolean!
+  reTaskOrder(reOrderInput: ReOrderInput!): Boolean!
+}
+
+input CreateListInput {
+  title: String!
+}
+
+input UpdateListInput {
+  title: String!
+  id: Int!
+}
+
+input CreateTaskInput {
+  title: String!
+  listId: Int!
+}
+
+input UpdateTaskInput {
+  id: Int!
+  title: String
+  status: String
+}
+
+input ReOrderInput {
+  taskId: Int!
+  newOrder: Int!
+}
